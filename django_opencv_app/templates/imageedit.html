@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block headerTitle %}Images {% endblock headerTitle %}
+
+{% block content %}
+
+<h1>Images</h1>
+
+<div id="container">
+<form id="editForm" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div id="title">
+        {{ image.title }}
+    </div>
+    <div id="title">
+        {{ form.treshold.errors }}
+        enter value of treshold filer {{ form.treshold }}
+        {{ form.medianblur.errors }}
+        enabe medianblur filter {{ form.medianblur }}
+    </div>
+    <input id="sendform" type="submit" value="do magic of openCV!">
+    <div id="title_before">
+        before filters
+    </div>
+    <div id="image">
+        <img src="{{ image.image.url }}" />
+    </div>
+    <div id="title_after">
+        after filters
+    </div>
+    <div id="image">
+        {% if image.modified_image %}
+            <img src="{{ image.modified_image.url }}" />
+        {% else %}
+            <img src={{ MEDIA_URL }}{{ image.image }} />
+        {% endif %}
+    </div>
+
+</form>
+</div>
+
+{% endblock content %}

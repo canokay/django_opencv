@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block headerTitle %}Image Add {% endblock headerTitle %}
+
+{% block content %}
+
+<h1>Image Add</h1>
+
+<div id="container">
+<form id="editForm" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div id="title">
+        {{ form.title.errors }}
+        {{ form.title }}
+    </div>
+    <div id="image">
+        {{ form.image.errors }}
+        {{ form.image }}
+    </div>
+    <input id="sendform" type="submit">
+</form>
+</div>
+
+{% endblock content %}
