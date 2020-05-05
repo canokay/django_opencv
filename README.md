@@ -15,7 +15,11 @@ Proje Python 3 kullanılarak yapılacaktır.
 1. https://github.com/canokay/django_opencv/archive/master.zip adresine gidip dosyayı indirin.
 2. Zip'i açın ve içerisindeki django_opencv-master klasörüne girin. 
 3. Bulunduğunuz klasörde **manage.py** olduğuna emin olun.
-4. Terminal ekranindan
+4. Python ve pip kurulu olduğundan emin olun. Bunun için 
+   * `python --version`
+   * `pip --version` kodlarını terminal ekranında yazıp, python ve pip versiyonunu kontrol edebilirsiniz.
+5. Terminal ekraninda
+    * `pip install -r requirements.txt`
     * `python manage.py makemigrations`
     * `python manage.py migrate`
     * `python manage.py createsuperuser`
