@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block headerTitle %}Image Add {% endblock headerTitle %}
+
+{% block content %}
+
+<h1>Image Add</h1>
+
+<div id="container">
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div id="title">
+            {{ form.title }}
+        </div>
+        <div id="image">
+            {{ form.image }}
+        </div>
+        <button type = "submit" class = "btn btn-danger">Resim Ekle</button>
+    </form>
+</div>
+
+{% endblock content %}

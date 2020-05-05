@@ -14,25 +14,23 @@
     </div>
     <div id="title">
         {{ form.treshold.errors }}
-        enter value of treshold filer {{ form.treshold }}
-        {{ form.medianblur.errors }}
-        enabe medianblur filter {{ form.medianblur }}
+        Black and White Thresh 0-255 =  {{ form.thresh }}
     </div>
-    <input id="sendform" type="submit" value="do magic of openCV!">
+    <input id="sendform" type="submit" value="OpenCV Çalıştır">
     <div id="title_before">
         before filters
     </div>
     <div id="image">
-        <img src="{{ image.image.url }}" />
+        <img src="{{ image.image.url }}"  height="150px"/>
     </div>
     <div id="title_after">
         after filters
     </div>
     <div id="image">
         {% if image.modified_image %}
-            <img src="{{ image.modified_image.url }}" />
+            <img src="{{ image.modified_image.url }}" height="150px"/>
         {% else %}
-            <img src={{ MEDIA_URL }}{{ image.image }} />
+            <img src="{{ image.image.url }}" height="150px"/>
         {% endif %}
     </div>
 

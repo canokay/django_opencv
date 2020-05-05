@@ -1,10 +1,11 @@
 from django.conf.urls import url
-from django_opencv_app.views import ImageView, ImageListView, ImageAddView
+from django_opencv_app.views import IndexView, CreateImageView, EditCv2ImageView
+
 
 app_name = 'django_opencv_app'
 
 urlpatterns = [
-    url(r'^edit/(?P<id>\d+)$', ImageView.as_view(), name='image-edit'),
-    url(r'^$', ImageListView.as_view()),
-    url(r'^add/', ImageAddView.as_view(), name='add-image'),
+    url(r'^$', IndexView, name='homepage'),
+    url(r'^add/', CreateImageView, name='image_add'),
+    url(r'^edit/(?P<id>\d+)$', EditCv2ImageView, name='image_edit'),
 ]

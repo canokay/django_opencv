@@ -13,6 +13,4 @@ class ImageForm(forms.ModelForm):
         }
 
 class ImageEditForm(forms.Form):
-
-    treshold = forms.IntegerField(label='value of treshold', max_value=255)
-    medianblur = forms.BooleanField()
+    thresh = forms.IntegerField(label='value of treshold', min_value=0, max_value=255)
